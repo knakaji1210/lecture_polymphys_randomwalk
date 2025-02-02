@@ -3,6 +3,8 @@
 講義「高分子物理学特論」の#2「Scaling Law of Ideal Chains」、#3「Scaling Law of Real Chains」で利用
 
 ＜未解決問題＞
+まだrw/distinctwalk系をgitしてない
+まだsaw
 
 ＜過去の更新履歴＞（開発の手順の記録として残しておく）
 更新履歴
