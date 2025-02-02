@@ -1,0 +1,103 @@
+knakaji MacBook Pro 2018
+
+random_walk/rw/statistics/3d/ログ
+
+(statistics)
+
+(Lecture) knakaji@knakaji-MacBook-Pro-2018 3d % python3 randomWalk_3d_square_rev2.py
+Degree of polymerization (default=1000): 1000
+Number of repetition (default=1000): 100
+total time = 0.10296 s
+
+(Lecture) knakaji@knakaji-MacBook-Pro-2018 3d % python3 randomWalk_3d_square_rev2.py
+Degree of polymerization (default=1000): 1000
+Number of repetition (default=1000): 1000
+total time = 0.93239 s
+
+(Lecture) knakaji@knakaji-MacBook-Pro-2018 3d % python3 randomWalk_3d_square_rev2.py
+Degree of polymerization (default=1000): 1000
+Number of repetition (default=1000): 10000
+total time = 8.37535 s
+
+(Lecture) knakaji@knakaji-MacBook-Pro-2018 3d % python3 randomWalk_3d_square_rev2.py
+Degree of polymerization (default=1000): 1000
+Number of repetition (default=1000): 100000
+total time = 86.73666 s
+
+(Lecture) knakaji@knakaji-MacBook-Pro-2018 3d % python3 randomWalk_3d_square_rev2.py
+Degree of polymerization (default=1000): 1000
+Number of repetition (default=1000): 1000000
+total time = 902.79183 s
+
+(scaling)
+
+最新版では指数の誤差も表示するように変更
+
+(Lecture) knakaji@knakaji-iMac-M1 3d % python3 randomWalk_3d_square_scaling_R_rev2.py 
+Max power exponent (default=5): 5
+Number of repetition (default=100): 100
+N = 1, R = 1.00000, t = 0.00232 s
+N = 3, R = 1.76068, t = 0.00394 s
+N = 10, R = 3.06920, t = 0.00641 s
+N = 31, R = 6.04483, t = 0.01113 s
+N = 100, R = 9.91968, t = 0.02299 s
+N = 316, R = 18.55640, t = 0.04677 s
+N = 1000, R = 31.79434, t = 0.10118 s
+N = 3162, R = 54.57160, t = 0.23627 s
+N = 10000, R = 102.05499, t = 0.66465 s
+N = 31622, R = 175.77139, t = 2.02553 s
+N = 100000, R = 344.24654, t = 6.29791 s
+exponent for R = 0.502±0.003
+total time = 6.29817 s
+
+(Lecture) knakaji@knakaji-iMac-M1 3d % python3 randomWalk_3d_square_scaling_R_rev2.py
+Max power exponent (default=5): 5
+Number of repetition (default=100): 1000
+N = 1, R = 1.00000, t = 0.00844 s
+N = 3, R = 1.71872, t = 0.01749 s
+N = 10, R = 3.11641, t = 0.03149 s
+N = 31, R = 5.55320, t = 0.05734 s
+N = 100, R = 9.87593, t = 0.10842 s
+N = 316, R = 18.23332, t = 0.24212 s
+N = 1000, R = 32.20388, t = 0.66681 s
+N = 3162, R = 56.97922, t = 2.02395 s
+N = 10000, R = 99.00401, t = 6.34379 s
+N = 31622, R = 182.54090, t = 19.96777 s
+N = 100000, R = 312.67879, t = 63.59948 s
+exponent for R = 0.501±0.001
+total time = 63.60011 s
+
+(Lecture) knakaji@knakaji-iMac-M1 3d % python3 randomWalk_3d_square_scaling_R_rev2.py
+Max power exponent (default=5): 5
+Number of repetition (default=100): 10000
+N = 1, R = 1.00000, t = 0.02752 s
+N = 3, R = 1.73361, t = 0.05972 s
+N = 10, R = 3.15538, t = 0.12366 s
+N = 31, R = 5.56706, t = 0.27450 s
+N = 100, R = 9.98476, t = 0.72093 s
+N = 316, R = 17.82934, t = 2.08452 s
+N = 1000, R = 31.64958, t = 6.34005 s
+N = 3162, R = 56.04487, t = 19.86254 s
+N = 10000, R = 99.91769, t = 62.93487 s
+N = 31622, R = 178.26583, t = 199.24468 s
+N = 100000, R = 314.76571, t = 633.07384 s
+exponent for R = 0.500±0.000
+total time = 633.07637 s
+
+(Lecture) knakaji@knakaji-iMac-M1 3d % python3 randomWalk_3d_square_scaling_R_rev2.py
+Max power exponent (default=5): 5
+Number of repetition (default=100): 100000
+N = 1, R = 1.00000, t = 0.24976 s
+N = 3, R = 1.73251, t = 0.55160 s
+N = 10, R = 3.15126, t = 1.15659 s
+N = 31, R = 5.55549, t = 2.62940 s
+N = 100, R = 9.99216, t = 7.01284 s
+N = 316, R = 17.76107, t = 20.59593 s
+N = 1000, R = 31.59205, t = 63.86322 s
+N = 3162, R = 56.25177, t = 201.07161 s
+N = 10000, R = 100.01269, t = 634.97098 s
+N = 31622, R = 177.83670, t = 2014.49005 s
+N = 100000, R = 316.50477, t = 6409.70943 s
+exponent for R = 0.500±0.000
+total time = 6409.71636 s
+
