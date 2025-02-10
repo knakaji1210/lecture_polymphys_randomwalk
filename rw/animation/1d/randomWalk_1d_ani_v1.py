@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
 import randomWalk_1dFunc_v1 as rdwalk
+import time     # added in 250209
 
 try:
     N = int(input('Degree of polymerization (default=10): '))
@@ -14,6 +15,8 @@ try:
     M = int(input('Number of repetition (default=5): '))
 except ValueError:
     M = 5
+
+start_time = time.process_time()     # added in 250209
 
 imgs_rep = []
 
@@ -29,6 +32,10 @@ for m in range(M):
     imgs = rdwalk.randomWalk_1d(N)
     imgs_rep = imgs_rep + imgs
     print("repeat num = {0}".format(m+1))
+
+end_time = time.process_time()                              # added in 250209
+elapsed_time = end_time - start_time                        # added in 250209
+print("elapsed time = {0:.3f} sec".format(elapsed_time))    # added in 250209
 
 ani = animation.ArtistAnimation(fig, imgs_rep, interval=10)
 ani.save('./gif/randomWalk_1d.gif', writer = 'pillow', fps = 30)
