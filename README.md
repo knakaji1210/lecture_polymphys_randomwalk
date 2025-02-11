@@ -6,6 +6,8 @@
 まだrw/distinctwalk系をgitしてない
 まだsaw系も全く
 
+animatplotは3次元描画できないので、3次元のアニメーションはmatplotlibのanimation.ArtistAnimationを使うしかない。
+
 ＜過去の更新履歴＞（開発の手順の記録として残しておく）
 更新履歴
 
