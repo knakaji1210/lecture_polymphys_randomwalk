@@ -2,11 +2,20 @@
 
 講義「高分子物理学特論」の#2「Scaling Law of Ideal Chains」、#3「Scaling Law of Real Chains」で利用
 
+＜現在進行形＞
+pythonのリストで書いたオリジナルをnp.ndarrayに置き換える試みを行っている
+以下は完了済み
+rw/animation/1d
+rw/animation/2d
+
+
 ＜未解決問題＞
 まだrw/distinctwalk系をgitしてない
 まだsaw系も全く
 
-animatplotは3次元描画できないので、3次元のアニメーションはmatplotlibのanimation.ArtistAnimationを使うしかない。
+rw/animation/3d
+animatplotは3次元描画ができない
+3次元のアニメーションは従来のmatplotlibのanimation.ArtistAnimationを使うしかない
 
 ＜過去の更新履歴＞（開発の手順の記録として残しておく）
 更新履歴
