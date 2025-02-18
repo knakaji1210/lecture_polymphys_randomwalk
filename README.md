@@ -2,16 +2,39 @@
 
 講義「高分子物理学特論」の#2「Scaling Law of Ideal Chains」、#3「Scaling Law of Real Chains」で利用
 
-＜現在進行形＞
-pythonのリストで書いたオリジナルをnp.ndarrayに置き換える試みを行っている
-以下は完了済み
-rw/animation/1d
-rw/animation/2d
-
-
 ＜未解決問題＞
 まだrw/distinctwalk系をgitしてない
 まだsaw系も全く
+
+＜np.ndarrayに置き換える試み＞
+pythonのリストで書いたオリジナルをnp.ndarrayに置き換える試みを行った。
+以下は完了済み
+rw/animation/1d
+rw/animation/2d
+rw/statistics/1d
+その結果、statisticsのところでnp.ndarrayの方が圧倒的に遅いと分かったので、
+さらにtimeitを使って時間を計測してみた
+rw/animation/1d/randomWalk_1d_speedTest_anim.py
+rw/statistics/1d/randomWalk_1d_speedTest_stat.py
+その結果、
+list =  0.029663904100016226
+array =  0.0016563124998356215
+でarrayの方が圧倒的に速いが、no_imgでやると
+list_noimg =  3.56917007593438e-05
+でlistの方が圧倒的に速いという結論になった。
+以下の記事
+https://teratail.com/questions/219411
+によると、
+「普通にpythonレイヤからnumpy配列の「要素」にアクセスするような処理をすると、オーバーヘッドの塊みたいなものですから遅い」
+とのこと。まさにそれなのかなと結論づいた。
+
+以上のことから、「np.ndarrayに置き換える試み」は凍結することとした。
+ただし、見栄えの問題で
+from matplotlib import animation
+を使うのではなく、
+import animatplot as amp
+を使う方には変えたい（3dはNGだけど）ので、その修正だけ行うことを実行開始（250218）。
+
 
 rw/animation/3d
 animatplotは3次元描画ができない
