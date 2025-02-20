@@ -12,7 +12,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import animatplot as amp
 import time
-import randomWalk_3dSquareLatticeFunc_v2 as rdwalk
+import randomWalk_3dSquareLatticeFunc_ndarray as rdwalk
 
 try:
     N = int(input('Degree of polymerization (default=10): '))
