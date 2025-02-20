@@ -14,14 +14,14 @@ import animatplot as amp
 import time
 
 try:
-    N = int(input('Degree of polymerization (default=10): '))
+    N = int(input('Degree of polymerization (default=100): '))
 except ValueError:
-    N = 10
+    N = 100
 
 try:
-    M = int(input('Number of repetition (default=5): '))
+    M = int(input('Number of repetition (default=3): '))
 except ValueError:
-    M = 5
+    M = 3
 
 start_time = time.process_time()                              # 計算にかかる時間を計測
 
@@ -40,7 +40,7 @@ randomWalk_front = amp.blocks.Scatter(x_front_m, y_front_m, ax=ax, marker="x", c
 randomWalk_end = amp.blocks.Scatter(x_end_m, y_end_m, ax=ax, marker="o", c='red', zorder=3)
 
 timeList = rdwalk.timeList(N,M)
-timeLine = amp.Timeline(timeList, units=' steps', fps=20)
+timeLine = amp.Timeline(timeList, units=' steps', fps=10)
 
 anim = amp.Animation([randomWalk,randomWalk_front,randomWalk_end], timeLine)
 anim.controls()
