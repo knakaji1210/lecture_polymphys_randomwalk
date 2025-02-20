@@ -40,7 +40,7 @@ randomWalk_front = amp.blocks.Scatter(x_front_m, y_front_m, ax=ax, marker="x", c
 randomWalk_end = amp.blocks.Scatter(x_end_m, y_end_m, ax=ax, marker="o", c='red', zorder=3)
 
 timeList = rdwalk.timeList(N,M)
-timeLine = amp.Timeline(timeList, units=' steps', fps=10)
+timeLine = amp.Timeline(timeList, units=' steps', fps=20)
 
 anim = amp.Animation([randomWalk,randomWalk_front,randomWalk_end], timeLine)
 anim.controls()
