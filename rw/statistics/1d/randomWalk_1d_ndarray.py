@@ -13,9 +13,9 @@ import numpy as np
 from math import *
 from scipy.stats import norm
 from scipy.optimize import curve_fit
-import rw1dFuncS_v2 as rws
-import rw1dFuncM_v2 as rwm
-import histDraw_v2 as hist
+import rw1dFuncS_ndarray as rws
+import rw1dFuncM_ndarray as rwm
+import histDraw_ndarray as hist
 import matplotlib.pyplot as plt
 import time
 
