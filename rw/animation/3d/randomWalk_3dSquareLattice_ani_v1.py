@@ -7,14 +7,14 @@ import randomWalk_3dSquareLatticeFunc_v1 as rdwalk
 import time     # added in 250211
 
 try:
-    N = int(input('Degree of polymerization (default=10): '))
+    N = int(input('Degree of polymerization (default=100): '))
 except ValueError:
-    N = 10
+    N = 100
 
 try:
-    M = int(input('Number of repetition (default=5): '))
+    M = int(input('Number of repetition (default=3): '))
 except ValueError:
-    M = 5
+    M = 3
 
 start_time = time.process_time()     # added in 250211
 

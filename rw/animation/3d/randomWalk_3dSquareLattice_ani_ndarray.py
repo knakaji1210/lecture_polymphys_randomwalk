@@ -15,14 +15,14 @@ import time
 import randomWalk_3dSquareLatticeFunc_ndarray as rdwalk
 
 try:
-    N = int(input('Degree of polymerization (default=10): '))
+    N = int(input('Degree of polymerization (default=100): '))
 except ValueError:
-    N = 10
+    N = 100
 
 try:
-    M = int(input('Number of repetition (default=5): '))
+    M = int(input('Number of repetition (default=3): '))
 except ValueError:
-    M = 5
+    M = 3
 
 start_time = time.process_time()                              # 計算にかかる時間を計測
 
@@ -58,7 +58,7 @@ end_time = time.process_time()                              # 計算にかかる
 elapsed_time = end_time - start_time                        # 計算にかかる時間を計測
 print("elapsed time = {0:.3f} sec".format(elapsed_time))    # 計算にかかる時間を表示
 
-savefile = "./gif/randomWalk_3d_N{0}_M{1}".format(N,M)
+savefile = "./gif/randomWalk_3dSquareLattice_N{0}_M{1}".format(N,M)
 anim.save_gif(savefile)
 
 plt.show()
