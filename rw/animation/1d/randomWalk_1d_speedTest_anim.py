@@ -2,11 +2,14 @@
 
 '''
 結果
-list =  0.029663904100016226
-array =  0.0016563124998356215
+list =  0.03205440409983566
+array =  0.0018065917000058107
 でarrayの方が圧倒的に速いが、no_imgでやると
-list_noimg =  3.56917007593438e-05
+list_noimg =  3.1762499929754995e-05
 でlistの方が圧倒的に速い。
+matplotlibのanimationからanimatplotに変更するために行った修正後は
+list_v2 =  0.000507991699851118
+でlist_noimgには勝てないが、arrayよりは早い
 '''
 
 import random as rd
@@ -105,13 +108,42 @@ def randomWalk_1d_array(N):
 
     return x_array_steps, y_array_steps
 
+def randomWalk_1d_list_v2(N):
+
+    num_step = 0
+    x, y = 0, 0
+    x_list = [0]
+    y_list = [0]
+
+    direction = np.array([0,np.pi])     # x軸からの角度
+
+    for n in range(N):
+        step = np.random.choice(direction)
+        x = x + np.cos(step)        # (+1 or -1)
+        y = y                       # 必ず0
+        x_list.append(x)
+        y_list.append(y)
+
+        num_step += 1
+
+    print("final num = {0}".format(num_step)) # to check the number of steps
+
+    x_list_steps = [ x_list[:i+1] for i in range(N+1) ]
+    y_list_steps = [ y_list[:i+1] for i in range(N+1) ]
+    x_front = [ [x_list[i]] for i in range(N+1) ]       # x_listをamp.blocks.Scatterで使える形への変換
+    y_front = [ [y_list[i]] for i in range(N+1) ]
+
+    return x_front, y_front, x_list_steps, y_list_steps
+
 N = 100
 loop = 10
 
 result_l = timeit.timeit(lambda: randomWalk_1d_list(N), number=loop)
 result_l_noimg = timeit.timeit(lambda: randomWalk_1d_list_No_img(N), number=loop)
 result_a = timeit.timeit(lambda: randomWalk_1d_array(N), number=loop)
+result_l_v2 = timeit.timeit(lambda: randomWalk_1d_list_v2(N), number=loop)
 
 print("list = ",result_l / loop)
 print("list_noimg = ",result_l_noimg / loop)
 print("array = ",result_a / loop)
+print("list_v2 = ",result_l_v2 / loop)
