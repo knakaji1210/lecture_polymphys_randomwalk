@@ -36,6 +36,16 @@ from matplotlib import animation
 import animatplot as amp  
 を使う方には変えたい（3dはNGだけど）ので、その修正だけ行うことを実行開始（250218）。  
 
+実行完了（250221）、これに合わせてstatisticsの方も少しいじる  
+その過程で    
+np.random.choice  
+が遅いということ、  
+rng = np.random.default_rng()  
+rng.choice()  
+も速くはないということが判明したので、statisticsの方は  
+rd.choice  
+に戻すことにした。  
+
 これに関する未解決問題として  
 rw/animation/3d  
 animatplotは3次元描画ができない。  
