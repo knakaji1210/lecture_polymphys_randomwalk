@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 def histDraw(fig, row, col, order, hist_title, hist_x, hist_color, input_list):
 
-#    num_bins = 50
-    num_bins = 40
+    num_bins = 50
+#    num_bins = 40
 
     location = str(row)+str(col)+str(order)
 

@@ -121,7 +121,7 @@ fit_RY = [ param[1]*np.exp(-x*x/param[0]/2) for x in fit_RX ]
 plt.plot(fit_RX, fit_RY)
 
 hist_XX, hist_XY, histInfo_X = hist.histDraw(fig, 2, 2, 3, ax3_title, "$X$", "green", xt_list)
-GaussXX = np.linspace(histInfo_X[0], histInfo_R[1], 100)
+GaussXX = np.linspace(histInfo_X[0], histInfo_X[1], 100)
 GaussXY = norm.pdf(GaussXX, GaussX_mean, GaussX_std)
 plt.plot(GaussXX, GaussXY, color="red")
 np.savetxt("./data/hist_XX_N{0:.0f}M{1:.0f}.txt".format(logN, logM), hist_XX)
