@@ -106,9 +106,9 @@ ax1.plot(xi, yi, marker=".", color="red")
 ax1.plot(xt, yt, marker=".", color="red")
 
 hist_RX, hist_RY, histInfo_R = hist.histDraw(fig, 2, 2, 2, ax2_title, "$r$", "orange", r_list)
-np.savetxt("./data/hist_RX_N{0:.0f}M{1:.0f}.txt", hist_RX)
-np.savetxt("./data/hist_RY_N{0:.0f}M{1:.0f}.txt", hist_RY)
-np.savetxt("./data/histInfo_R_N{0:.0f}M{1:.0f}.txt", histInfo_R)
+np.savetxt("./data/hist_RX_N{0:.0f}M{1:.0f}.txt".format(logN, logM), hist_RX)
+np.savetxt("./data/hist_RY_N{0:.0f}M{1:.0f}.txt".format(logN, logM), hist_RY)
+np.savetxt("./data/histInfo_R_N{0:.0f}M{1:.0f}.txt".format(logN, logM), histInfo_R)
 hist_RY = np.append(hist_RY, 0)
 
 param, cov = curve_fit(fitFunc_r, hist_RX, hist_RY, p0=[N, 1e-3])
