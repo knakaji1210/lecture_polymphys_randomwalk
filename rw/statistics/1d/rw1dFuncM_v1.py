@@ -1,7 +1,7 @@
 # Function to calculate properties of 1d Random Walk (multiple run)
 
 import numpy as np
-import rw1dFuncS as rws
+import rw1dFuncS_v1 as rws
 
 def rw1dFuncM(N, M):
 

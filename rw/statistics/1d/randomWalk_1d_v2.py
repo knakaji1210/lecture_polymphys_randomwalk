@@ -1,20 +1,23 @@
 # 1d Random Walk
-# pythonのリストで書いたオリジナルをnp.ndarrayに置き換える試み（250214）
-
-# 計測結果
-# N = 1000, M = 5で
-# v1 = 20.5 s
-# v2 = 536 s むしろ遅い！
 
 import numpy as np
 from math import *
 from scipy.stats import norm
 from scipy.optimize import curve_fit
-import rw1dFuncS_ndarray as rws
-import rw1dFuncM_ndarray as rwm
-import histDraw_ndarray as hist
+import rw1dFunc_v2 as rw
+import histDraw_v1 as hist
 import matplotlib.pyplot as plt
 import time
+
+# 計測結果
+# N = 1000, M = 10000で
+# v1 = 2.05559 s
+# ndarray = 54.62519 s むしろ遅い！
+# v2 = 39.95489 s これも遅いな・・・
+# np.random.choiceが遅いからと判明
+# rd.choiceに変更すると
+# v2 = 5.99347 s
+# と改善した
 
 # Calculation of 1d Random Walk
 
@@ -30,50 +33,45 @@ except ValueError:
 
 start_time = time.process_time()
 
-logN = np.log10(N)
-logM = np.log10(M)
+logN = log10(N)
+logM = log10(M)
 
 # ax1 data（１つだけランダムウォークを例示的に表示するため）
-coordinateS_array = rws.rw1dFuncS(N)
-x_array = coordinateS_array[0]
-y_array = coordinateS_array[1]
-xi = x_array[0]     # 初期位置
-yi = y_array[0]
-xt = x_array[-1]    # 最終位置
-yt = y_array[-1]
+x_list, y_list = rw.rw1dS(N)
+xi = x_list[0]     # 初期位置
+yi = y_list[0]
+xt = x_list[-1]    # 最終位置
+yt = y_list[-1]
 r  = np.sqrt(xt**2 + yt**2)
 
 # ax2-4 data（統計データを表示、計算するため）
-coordinateM_array = rwm.rw1dFuncM(N, M)
-xt_array = coordinateM_array[0]
-yt_array = coordinateM_array[1]
-r2_array = coordinateM_array[2]
-r_array  = np.sqrt(r2_array)
+xt_list, yt_list, r2_list = rw.rw1dM(N,M)
+r_list = [ np.sqrt(r2_list[i]) for i in range(M)]
 
 # ax2-4 statistical data（統計データを表示するため）
-x_max  = np.max(xt_array)
-y_max  = np.max(yt_array)
-r2_max = np.max(r2_array)
-r_max  = np.max(r_array)
+x_max  = np.max(xt_list)
+y_max  = np.max(yt_list)
+r2_max = np.max(r2_list)
+r_max  = np.max(r_list)
 
-x_mean  = np.mean(xt_array)
-y_mean  = np.mean(yt_array)
-r2_mean = np.mean(r2_array)
-r_mean  = np.mean(r_array)
+x_mean  = np.mean(xt_list)
+y_mean  = np.mean(yt_list)
+r2_mean = np.mean(r2_list)
+r_mean  = np.mean(r_list)
 
-x_std  = np.std(xt_array)
-y_std  = np.std(yt_array)
-r2_std = np.std(r2_array)
-r_std  = np.std(r_array)  
+x_std  = np.std(xt_list)
+y_std  = np.std(yt_list)
+r2_std = np.std(r2_list)
+r_std  = np.std(r_list)  
 
-R      = np.sqrt(r2_mean)       # (平均)末端間距離
+R = np.sqrt(r2_mean)       # (平均)末端間距離
 
 # Least-squares fitting
 
-GaussX_mean,GaussX_std = norm.fit(xt_array)
-GaussY_mean,GaussY_std = norm.fit(yt_array)
+GaussX_mean,GaussX_std = norm.fit(xt_list)
+GaussY_mean,GaussY_std = norm.fit(yt_list)
 
-def fitFunc_r(x, a, b):           # r分布のためのフィッティング関数
+def fitFunc_r(x, a, b):    # r分布のためのフィッティング関数
     return  b * np.exp(-x*x/a/2)
 
 end_time = time.process_time()
@@ -103,14 +101,14 @@ fig = plt.figure(figsize=(8.0, 9.5))
 ax1 = fig.add_subplot(221,title=ax1_title, xlabel='$X$', ylabel='$Y$',
                       xlim=[-x_range, x_range], ylim=[-y_range , y_range])
 ax1.grid(axis='both', color="gray", lw=0.5)
-ax1.plot(x_array, y_array)
-ax1.plot(xi, yi, marker=".", color="red")       # 始点の赤丸
-ax1.plot(xt, yt, marker=".", color="red")       # 終点の赤丸
+ax1.plot(x_list, y_list)
+ax1.plot(xi, yi, marker=".", color="red")
+ax1.plot(xt, yt, marker=".", color="red")
 
-hist_RX, hist_RY, histInfo_R = hist.histDraw(fig, 2, 2, 2, ax2_title, "$r$", "orange", r_array)
-np.savetxt("./data/hist_RX_N{0:.0f}M{1:.0f}.txt".format(logN, logM), hist_RX)
-np.savetxt("./data/hist_RY_N{0:.0f}M{1:.0f}.txt".format(logN, logM), hist_RY)
-np.savetxt("./data/histInfo_R_N{0:.0f}M{1:.0f}.txt".format(logN, logM), histInfo_R)
+hist_RX, hist_RY, histInfo_R = hist.histDraw(fig, 2, 2, 2, ax2_title, "$r$", "orange", r_list)
+np.savetxt("./data/hist_RX_N{0:.0f}M{1:.0f}.txt", hist_RX)
+np.savetxt("./data/hist_RY_N{0:.0f}M{1:.0f}.txt", hist_RY)
+np.savetxt("./data/histInfo_R_N{0:.0f}M{1:.0f}.txt", histInfo_R)
 hist_RY = np.append(hist_RY, 0)
 
 param, cov = curve_fit(fitFunc_r, hist_RX, hist_RY, p0=[N, 1e-3])
@@ -119,10 +117,10 @@ R_fit = np.sqrt(param[0])
 resultText_Rfit = "$R_{{fit}}$ = {0:.1f}".format(R_fit)
 
 fit_RX = np.linspace(max(histInfo_R[0], 0), histInfo_R[1], 100)
-fit_RY = fitFunc_r(fit_RX, param[0], param[1])  # np.ndarrayを使うとこの形で良い
+fit_RY = [ param[1]*np.exp(-x*x/param[0]/2) for x in fit_RX ]
 plt.plot(fit_RX, fit_RY)
 
-hist_XX, hist_XY, histInfo_X = hist.histDraw(fig, 2, 2, 3, ax3_title, "$X$", "green", xt_array)
+hist_XX, hist_XY, histInfo_X = hist.histDraw(fig, 2, 2, 3, ax3_title, "$X$", "green", xt_list)
 GaussXX = np.linspace(histInfo_X[0], histInfo_R[1], 100)
 GaussXY = norm.pdf(GaussXX, GaussX_mean, GaussX_std)
 plt.plot(GaussXX, GaussXY, color="red")
@@ -130,7 +128,7 @@ np.savetxt("./data/hist_XX_N{0:.0f}M{1:.0f}.txt".format(logN, logM), hist_XX)
 np.savetxt("./data/hist_XY_N{0:.0f}M{1:.0f}.txt".format(logN, logM), hist_XY)
 np.savetxt("./data/histInfo_X_N{0:.0f}M{1:.0f}.txt".format(logN, logM), histInfo_X)
 
-hist_YX, hist_YY, histInfo_Y = hist.histDraw(fig, 2, 2, 4, ax4_title, "$Y$", "green", yt_array)
+hist_YX, hist_YY, histInfo_Y = hist.histDraw(fig, 2, 2, 4, ax4_title, "$Y$", "green", yt_list)
 
 fig.text(0.15, 0.60, resultText_r)
 fig.text(0.15, 0.58, resultText_R)

@@ -2,7 +2,7 @@
 # pythonのリストで書いたオリジナルをnp.ndarrayに置き換える試み（250214）
 
 import numpy as np
-import rw1dFuncS_v2 as rws
+import rw1dFuncS_ndarray as rws
 
 def rw1dFuncM(N, M):
 

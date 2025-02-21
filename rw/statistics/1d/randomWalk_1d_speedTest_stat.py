@@ -12,7 +12,7 @@ import random as rd
 from math import *
 import timeit
 
-def rw1dFuncS_list(N):
+def rw1dFuncS_list(N):          # rw1dFuncS_v1
 
     num = 0
     x, y = 0, 0
@@ -37,7 +37,7 @@ def rw1dFuncS_list(N):
 
     return coordinateS_list, resultS_list
 
-def rw1dFuncS_array(N):
+def rw1dFuncS_array(N):         # rw1dFuncS_ndarray
 
     num_step = 0
     nan = np.nan
@@ -63,11 +63,39 @@ def rw1dFuncS_array(N):
 
     return coordinateS_array
 
+def rw1dS(N):           # rw1dFunc_v2
+
+    num_step = 0
+    x, y = 0, 0
+    x_list = [0]
+    y_list = [0]
+    
+    rng = np.random.default_rng()
+
+    direction = np.array([0,np.pi])     # x軸からの角度
+
+    for n in range(N):
+#        step = np.random.choice(direction) # これが遅いことが判明（250221）
+#        step = rng.choice(direction)       # np推奨のこれも速くはない（250221）
+        step = rd.choice(direction)
+        x = x + np.cos(step)        # (+1 or -1)
+        y = y                       # 必ず0
+        x_list.append(x)
+        y_list.append(y)
+
+        num_step += 1
+
+#    print("final num = {0}".format(num_step)) # to check the number of steps
+
+    return x_list, y_list
+
 N = 100
 loop = 10000
 
-result_l = timeit.timeit(lambda: rw1dFuncS_list(N), number=loop)
+result_l1 = timeit.timeit(lambda: rw1dFuncS_list(N), number=loop)
 result_a = timeit.timeit(lambda: rw1dFuncS_array(N), number=loop)
+result_l2 = timeit.timeit(lambda: rw1dS(N), number=loop)
 
-print("list = ",result_l / loop)
+print("list_v1 = ",result_l1 / loop)
 print("array = ",result_a / loop)
+print("list_v2 = ",result_l2 / loop)
