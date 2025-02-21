@@ -2,7 +2,7 @@
 
 import numpy as np
 from math import *
-import rw1dFuncM as rwm
+import rw1dFuncM_v1 as rwm
 import matplotlib.pyplot as plt
 import time
 
