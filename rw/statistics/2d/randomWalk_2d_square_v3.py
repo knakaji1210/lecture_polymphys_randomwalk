@@ -1,4 +1,4 @@
-# 2d Random Walk
+# 2d Random Walk (square lattice model)
 
 import numpy as np
 from math import *
