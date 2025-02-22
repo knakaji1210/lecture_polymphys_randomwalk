@@ -132,7 +132,7 @@ GaussXY = norm.pdf(GaussXX, GaussX_mean, GaussX_std)
 plt.plot(GaussXX, GaussXY, color="red")
 np.savetxt("./data/hist_{0}_XX_N{1:.0f}M{2:.0f}.txt".format(model_fname, logN, logM), hist_XX)
 np.savetxt("./data/hist_{0}_XY_N{1:.0f}M{2:.0f}.txt".format(model_fname, logN, logM), hist_XY)
-np.savetxt("./data/histInfo_{0}_X_N{1:.0f}M{1:.0f}.txt".format(model_fname, logN, logM), histInfo_X)
+np.savetxt("./data/histInfo_{0}_X_N{1:.0f}M{2:.0f}.txt".format(model_fname, logN, logM), histInfo_X)
 
 hist_YX, hist_YY, histInfo_Y = hist.histDraw(fig, 2, 2, 4, ax4_title, "$Y$", "green", yt_list)
 GaussYX = np.linspace(histInfo_Y[0], histInfo_Y[1], 100)
