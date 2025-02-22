@@ -1,11 +1,11 @@
-# Function to draw animation of 1d Random Walk
+# Function to draw animation of 2d Random Walk
 # matplotlibのanimationからanimatplotに置き換える試み（250219）
 
 import random as rd
 from math import *
 import numpy as np
 
-def randomWalk_1d_S(N):
+def randomWalk_2d_S(N):
 
     num_step = 0
     x, y = 0, 0
@@ -32,7 +32,7 @@ def randomWalk_1d_S(N):
 
     return x_front, y_front, x_list_steps, y_list_steps
 
-def randomWalk_1d_M(N,M):
+def randomWalk_2d_M(N,M):
 
     nan = np.nan
     nan_list = [ [nan] for i in range(N)]

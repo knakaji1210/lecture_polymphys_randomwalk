@@ -25,7 +25,7 @@ except ValueError:
 
 start_time = time.process_time()                              # 計算にかかる時間を計測
 
-x_list_steps_m, y_list_steps_m, x_front_m, y_front_m, x_end_m, y_end_m = rdwalk.randomWalk_1d_M(N,M)
+x_list_steps_m, y_list_steps_m, x_front_m, y_front_m, x_end_m, y_end_m = rdwalk.randomWalk_2d_M(N,M)
 
 fig_title = "2-dimensional Random Walk ($N$ = {0}, $M$ = {1})".format(N,M)
 plot_lim = 2*np.sqrt(N)
