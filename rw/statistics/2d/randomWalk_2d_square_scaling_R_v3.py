@@ -1,8 +1,8 @@
-# Scaling of 2d Random Walk (square lattice model)
+# Scaling of 2d Random Walk (square lattice model) (updated on 250221)
 
 import numpy as np
 from math import *
-import rw2dFuncM_square as rwm
+import rw2dFunc_square_v2 as rw
 import matplotlib.pyplot as plt
 import time
 
@@ -28,9 +28,9 @@ R_list = []
 # Calculation of Sqrt of R２mean
 
 for n in n_list:
-    coordinateM_list, resultM_list = rwm.rw2dFuncM(n, M)
-    r2_mean = resultM_list[0]
-    R = np.sqrt(r2_mean)
+    xt_list, yt_list, r2_list = rw.rw2dM(n, M)
+    r2_mean = np.mean(r2_list)
+    R = np.sqrt(r2_mean)       # (平均)末端間距離
     R_list.append(R)
     # 進行ごとに時間を計測するように変更
     end_time = time.process_time()
