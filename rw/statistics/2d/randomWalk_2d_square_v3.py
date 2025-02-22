@@ -135,7 +135,7 @@ fig.text(0.57, 0.43, resultText_ymean)
 fig.text(0.57, 0.41, resultText_ystd)
 fig.text(0.74, 0.85, resultText_Rfit)
 
-savefile = "./png/randomWalk_2d_N{0:.0f}M{1:.0f}.png".format(logN, logM)
+savefile = "./png/randomWalk_2d_square_N{0:.0f}M{1:.0f}.png".format(logN, logM)
 
 fig.savefig(savefile, dpi=300, bbox_inches='tight')
 
