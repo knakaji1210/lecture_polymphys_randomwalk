@@ -84,11 +84,12 @@ print('total time = {0:.5f} s'.format(elapsed_time))
 x_range = x_max / sqrt(2)
 y_range = 1
 
-ax1_title = "1D Random Walk ($N$ = $10^{0:.0f}$, $M$ = $10^{1:.0f}$)".format(logN, logM)
+ax1_title = "1D Random Walk"
 ax2_title = "Distribution of $r$"
 ax3_title = "Distribution of $X$"
 ax4_title = "Distribution of $Y$"
 
+resultText_NM = "$N$ = $10^{0:.0f}$, $M$ = $10^{1:.0f}$".format(logN, logM)
 resultText_r = "$r$ = {0:.1f}".format(r)
 resultText_R = "$R$ = <$r^2>^{{1/2}}$ = {0:.1f}".format(R)
 resultText_xmean = "$\mu_x$ = <$x$> = {0:.1f}".format(x_mean)
@@ -130,6 +131,7 @@ np.savetxt("./data/histInfo_X_N{0:.0f}M{1:.0f}.txt".format(logN, logM), histInfo
 
 hist_YX, hist_YY, histInfo_Y = hist.histDraw(fig, 2, 2, 4, ax4_title, "$Y$", "green", yt_list)
 
+fig.text(0.15, 0.85, resultText_NM)
 fig.text(0.15, 0.60, resultText_r)
 fig.text(0.15, 0.58, resultText_R)
 fig.text(0.15, 0.43, resultText_xmean)
