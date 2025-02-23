@@ -1,4 +1,6 @@
 # Function to draw animation of 3d Self-Avoiding Walk (Square Lattice model)
+# 1d, 2dではmatplotlibのanimationからanimatplotに置き換える試みを行ったが、
+# animatplotが3dに対応してないため、過去に作成したバージョンのままキープする。
 
 import random as rd
 from math import *
