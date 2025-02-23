@@ -82,7 +82,7 @@ def saw2dM(N,M):
         x_list_steps_m += x_list_steps
         y_list_steps_m += y_list_steps
         num_step = len(x_front)                 # x_frontの長さが不定のため計測
-        print("l =",num_step)
+#        print("l =",num_step)
         num_step_list.append(num_step)
         nan_list = [ [nan] for i in range(num_step-1)]
         x_end = nan_list + [x_front[-1]]        # x_frontの最後をnanにする前に抽出し"o"の座標を作成

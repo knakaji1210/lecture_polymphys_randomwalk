@@ -22,7 +22,7 @@ start_time = time.process_time()                              # 計算にかか�
 x_list_steps_m, y_list_steps_m, x_front_m, y_front_m, x_end_m, y_end_m, num_step_list = saw.saw2dM(N,M)
 
 fig_title = "2-dimensional Self-Avoiding Walk ($N$ = {0}, $M$ = {1})".format(N,M)
-plot_lim = 4*np.sqrt(N)
+plot_lim = 2*np.sqrt(N)
 
 fig = plt.figure(figsize=(8,8))
 ax = fig.add_subplot(111, title=fig_title, xlabel='$X$', ylabel='$Y$',
