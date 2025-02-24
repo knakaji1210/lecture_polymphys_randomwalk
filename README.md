@@ -4,7 +4,7 @@
 
 ＜未解決問題＞  
 まだrw/distinctwalk系をgitしてない  
-まだsaw系も全く  
+まだsaw/distinctwalk系もgitしてない
 
 ＜np.ndarrayに置き換える試み＞  
 pythonのリストで書いたオリジナルをnp.ndarrayに置き換える試みを行った。  
