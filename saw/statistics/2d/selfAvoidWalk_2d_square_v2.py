@@ -102,7 +102,7 @@ ax2_title = "Distribution of $r$"
 ax3_title = "Distribution of $X$"
 ax4_title = "Distribution of $Y$"
 
-resultText_NM = "$N$ = $10^{0:.1f}$, $M$ = $10^{1:.0f}$".format(logN, logM)
+resultText_NM = "$N$ = $10^{{{0:.1f}}}$, $M$ = $10^{1:.0f}$".format(logN, logM)
 resultText_r = "$r$ = {0:.1f}".format(r)
 resultText_R = "$R$ = <$r^2>^{{1/2}}$ = {0:.1f}".format(R)
 resultText_xmean = "$\mu_x$ = <$x$> = {0:.1f}".format(x_mean)
