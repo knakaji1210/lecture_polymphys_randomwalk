@@ -102,7 +102,7 @@ ax2_title = "Distribution of $r$"
 ax3_title = "Distribution of $X$"
 ax4_title = "Distribution of $Y$"
 
-resultText_NM = "$N$ = $10^{0:.0f}$, $M$ = $10^{1:.0f}$".format(logN, logM)
+resultText_NM = "$N$ = $10^{0:.1f}$, $M$ = $10^{1:.0f}$".format(logN, logM)
 resultText_r = "$r$ = {0:.1f}".format(r)
 resultText_R = "$R$ = <$r^2>^{{1/2}}$ = {0:.1f}".format(R)
 resultText_xmean = "$\mu_x$ = <$x$> = {0:.1f}".format(x_mean)
@@ -172,7 +172,7 @@ fig.text(0.74, 0.83, resultText_dexp)
 fig.text(0.74, 0.81, resultText_nuexp)
 fig.text(0.74, 0.79, resultText_Rfit)
 
-savefile = "./png/selfAvoidingWalk_2d_square_N{0:.0f}M{1:.0f}.png".format(logN, logM)
+savefile = "./png/selfAvoidingWalk_2d_square_N{0:.1f}M{1:.0f}.png".format(logN, logM)
 
 fig.savefig(savefile, dpi=300, bbox_inches='tight')
 
