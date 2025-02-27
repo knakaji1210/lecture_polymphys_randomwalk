@@ -6,6 +6,13 @@
 まだrw/distinctwalk系をgitしてない  
 まだsaw/distinctwalk系もgitしてない
 
+＜distinctwalkについて＞  
+git上では  
+distinct_walks --> v0
+distinct_walks_r1 --> v1  
+distinct_walks_r2 --> v2  
+とリネームしてpushしてある。  
+
 ＜np.ndarrayに置き換える試み＞  
 pythonのリストで書いたオリジナルをnp.ndarrayに置き換える試みを行った。  
 以下は完了済み  
