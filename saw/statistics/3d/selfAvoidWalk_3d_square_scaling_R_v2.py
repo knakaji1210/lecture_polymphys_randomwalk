@@ -23,6 +23,7 @@ logM = log10(M)
 start_time = time.process_time()
 
 log_list = np.logspace(0, ex, 2*ex+1, base=10)
+#log_list = log_list[:-1]    # N=10,000を削除するための一時的措置
 n_list = [ int(x) for x in log_list ]
 x_list = [ log10(x) for x in n_list ]
 R_list = []

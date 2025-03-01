@@ -114,7 +114,7 @@ ax6_title = "Distribution of $Y$ ($M$ = $10^{0:.0f}$)".format(logM)
 ax7_title = "Z-X plane projection ($N$ = $10^{{{0:.1f}}}$)".format(logN)
 ax8_title = "Distribution of $Z$ ($M$ = $10^{0:.0f}$)".format(logM)
 
-resultText_NM = "$N$ = $10^{0:.1f}$, $M$ = $10^{1:.0f}$".format(logN, logM)
+resultText_NM = "$N$ = $10^{{{0:.1f}}}$, $M$ = $10^{1:.0f}$".format(logN, logM)
 resultText_r = "$r$ = {0:.1f}".format(r)
 resultText_R = "$R$ = <$r^2>^{{1/2}}$ = {0:.1f}".format(R)
 resultText_xmean = "$\mu_x$ = <$x$> = {0:.1f}".format(x_mean)
