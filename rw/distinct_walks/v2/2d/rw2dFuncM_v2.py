@@ -1,7 +1,7 @@
 #calculation of statistics of 2d random walk
 
 import numpy as np
-import rw2dFuncS4 as rws
+import rw2dFuncS_v2 as rws
 
 def rw2dCalcR(walks_list):
 
