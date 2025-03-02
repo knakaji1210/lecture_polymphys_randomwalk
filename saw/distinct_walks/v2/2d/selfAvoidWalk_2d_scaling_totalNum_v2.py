@@ -29,9 +29,9 @@ for n in range(N):
 
 log_list = [ log10(x) for x in totalNum_list ]
 
-np.savetxt("./data/num_steps.txt", num_list, fmt='%5.f')
-np.savetxt("./data/num_distinctwalks.txt", totalNum_list, fmt='%5.f')
-np.savetxt("./data/loog_num_distinctwalks.txt", log_list, fmt='%.3e')
+#np.savetxt("./data/num_steps.txt", num_list, fmt='%5.f')
+#np.savetxt("./data/num_distinctwalks.txt", totalNum_list, fmt='%5.f')
+#np.savetxt("./data/loog_num_distinctwalks.txt", log_list, fmt='%.3e')
 
 # Least-squares fitting
 
