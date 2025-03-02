@@ -11,7 +11,7 @@ git上では
 distinct_walks --> v0
 distinct_walks_r1 --> v1  
 distinct_walks_r2 --> v2  
-とリネームしてpushしてある。  
+とリネームしてpushしてある。v2の最後のバージョンはほとんど完成系なので"_v2"と名前を変更するだけにする。
 
 ＜np.ndarrayに置き換える試み＞  
 pythonのリストで書いたオリジナルをnp.ndarrayに置き換える試みを行った。  
