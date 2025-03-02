@@ -2,8 +2,8 @@
 
 import numpy as np
 from math import *
-import rw3dFuncS4 as rws
-import rw3dFuncM4 as rwm
+import rw3dFuncS_v2 as rws
+import rw3dFuncM_v2 as rwm
 import matplotlib.pyplot as plt
 import time
 
