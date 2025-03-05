@@ -1,6 +1,10 @@
 # Functions to generate distinct 1d Random Walk
 # csv書き出しを行うバージョン、完全に書き換え（250304）
 # distinctWalks_N1_x.csvとdistinctWalks_N1_y.csvを用意する必要がある
+# 間違いない動作を確認している最終バージョン
+# ただし、file I/Oの繰り返しが多いためかとても遅い
+# N = 12までのallでt = 1.19981 s
+# N = 13のnextでt = 3.17441 s
 
 import csv
 import numpy as np

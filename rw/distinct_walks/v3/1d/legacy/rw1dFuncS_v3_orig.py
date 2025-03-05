@@ -1,6 +1,7 @@
 # Functions to generate distinct 1d Random Walk
 # csv書き出しを行うバージョン、完全に書き換え（250304）
 # file_0_x.csvとfile_0_y.csvを用意する必要がある
+# このバージョンはxとyを別々に処理したため、SAWのときに困る
 
 import csv
 import numpy as np

@@ -1,3 +1,5 @@
+# csvの読み書きをテスト
+
 import csv
 
 file_num = 1
