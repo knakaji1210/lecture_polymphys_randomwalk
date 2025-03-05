@@ -1,6 +1,8 @@
 # Functions to generate distinct 1d Random Walk
 # csv書き出しを行うバージョン、完全に書き換え（250304）
-# distinctWalks_N1_x.csvとdistinctWalks_N1_y.csvを用意する必要がある
+# distinctWalks_N0_x.csvとdistinctWalks_N0_y.csvを用意する必要がある
+# 間違いない動作を確認している最終バージョン
+# ただし、file I/Oの繰り返しが多いためかとても遅い
 
 import csv
 import numpy as np
@@ -26,7 +28,7 @@ def rw1dDistinctWalks(N):                                       # Degree of poly
         totalNum += 1
     fi.close()
 
-    print('totalNum =', totalNum)
+    print('N = {0}, totalNum = '.format(file_num), totalNum)
 
     for i in range(totalNum):                                  # 数えたwalkの数だけ繰り返す
         fi_x = open(import_file_x, 'r', encoding = "utf-8-sig")

@@ -10,9 +10,9 @@ except ValueError:
 
 start_time = time.process_time()
 
-file_num = 1
+file_num = 0
 
-for n in range(N-1):
+for n in range(N):
     rws.rw1dDistinctWalks(file_num)
     file_num += 1
 
