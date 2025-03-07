@@ -17,8 +17,8 @@ distinct_walks_r1 --> v1
 distinct_walks_r2 --> v2  
 とリネームしてpushしてある。v2の最後のバージョンはほとんど完成系なので"_v2"と名前を変更するだけにする。  
 RW 1d・・・N=27でkilled、N=26は通る  
-RW 2d・・・N=14でkilled、N=13は通る
-RW 3d・・・N=11でkilled、N=10は通る
+RW 2d・・・N=14でkilled、N=13は通る  
+RW 3d・・・N=11でkilled、N=10は通る  
 SAW 1d・・・N=200などでも通る  
 SAW 2d・・・N=18でkilled、N=17は通る  
 SAW 3d・・・N=12でkilled、N=11は通る  
