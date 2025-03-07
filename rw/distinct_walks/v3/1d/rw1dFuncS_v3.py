@@ -16,10 +16,10 @@ def rw1dDistinctWalks(N):                                       # Degree of poly
     direction_list = ([1,0],[-1,0])
     num_steps = len(direction_list)                             # 可能な移動ステップの数
 
-    import_file_x = "./data/distinctWalks_N{0}_x.csv".format(file_num)    # 読み込むcsvファイルの名前  
-    import_file_y = "./data/distinctWalks_N{0}_y.csv".format(file_num)
-    export_file_x = "./data/distinctWalks_N{0}_x.csv".format(file_num+1)  # 次のステップのcsvファイルの名前
-    export_file_y = "./data/distinctWalks_N{0}_y.csv".format(file_num+1)
+    import_file_x = "./data/distinctWalks_1d_N{0}_x.csv".format(file_num)    # 読み込むcsvファイルの名前  
+    import_file_y = "./data/distinctWalks_1d_N{0}_y.csv".format(file_num)
+    export_file_x = "./data/distinctWalks_1d_N{0}_x.csv".format(file_num+1)  # 次のステップのcsvファイルの名前
+    export_file_y = "./data/distinctWalks_1d_N{0}_y.csv".format(file_num+1)
 
     fi = open(import_file_x, 'r', encoding = "utf-8-sig")       # 準備としてcsvファイルを読み込み、そこに含まれるwalkの数を数える
     reader = csv.reader(fi)

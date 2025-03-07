@@ -4,7 +4,7 @@ import numpy as np
 import csv
 
 def rw1dCountDistinctWalks(file_num):
-    import_file_x = "./data/distinctWalks_N{0}_x.csv".format(file_num)   # 読み込むcsvファイルの名前（1次元だけ読めば十分）
+    import_file_x = "./data/distinctWalks_1d_N{0}_x.csv".format(file_num)   # 読み込むcsvファイルの名前（1次元だけ読めば十分）
     fi = open(import_file_x, 'r', encoding = "utf-8-sig")               # csvファイルを読み込み、そこに含まれるwalkの数を数える
     reader = csv.reader(fi)
     totalNum = 0
@@ -17,8 +17,8 @@ def rw1dCountDistinctWalks(file_num):
 def rw1dCalcR(file_num):
     x_list = []
     y_list = []
-    import_file_x = "./data/distinctWalks_N{0}_x.csv".format(file_num)   # 読み込むcsvファイルの名前
-    import_file_y = "./data/distinctWalks_N{0}_y.csv".format(file_num)
+    import_file_x = "./data/distinctWalks_1d_N{0}_x.csv".format(file_num)   # 読み込むcsvファイルの名前
+    import_file_y = "./data/distinctWalks_1d_N{0}_y.csv".format(file_num)
     fi_x = open(import_file_x, 'r', encoding = "utf-8-sig")
     fi_y = open(import_file_y, 'r', encoding = "utf-8-sig")
     reader_x = csv.reader(fi_x)
