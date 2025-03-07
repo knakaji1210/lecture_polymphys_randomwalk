@@ -3,15 +3,25 @@
 講義「高分子物理学特論」の#2「Scaling Law of Ideal Chains」、#3「Scaling Law of Real Chains」で利用
 
 ＜未解決問題＞  
-まだrw/distinctwalk系をgitしてない  
-まだsaw/distinctwalk系もgitしてない
+とりあえず終了  
+ただSAW系で臨界指数が理論と合わない。これはNが大きいときにちゃんと満遍なく抜き出せてないからだと思われる。  
+Rosenbluth and Rosenbluth強化法をいずれ試してみたい。  
+https://github.com/ssh0/12-12_self_avoiding_rw/blob/master/12-12.rst
+もう一つはdistinct_walksでNを増やせない問題。メモリに任せるからだと思うが、解決の糸口は？  
+一つの解決策として結果をcsvファイルに書き出していく手法を検討中  
 
 ＜distinctwalkについて＞  
 git上では  
 distinct_walks --> v0
 distinct_walks_r1 --> v1  
 distinct_walks_r2 --> v2  
-とリネームしてpushしてある。v2の最後のバージョンはほとんど完成系なので"_v2"と名前を変更するだけにする。
+とリネームしてpushしてある。v2の最後のバージョンはほとんど完成系なので"_v2"と名前を変更するだけにする。  
+RW 1d・・・N=27でkilled、N=26は通る  
+RW 2d・・・N=14でkilled、N=13は通る
+RW 3d・・・N=11でkilled、N=10は通る
+SAW 1d・・・N=200などでも通る  
+SAW 2d・・・N=18でkilled、N=17は通る  
+SAW 3d・・・N=12でkilled、N=11は通る  
 
 ＜np.ndarrayに置き換える試み＞  
 pythonのリストで書いたオリジナルをnp.ndarrayに置き換える試みを行った。  
