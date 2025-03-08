@@ -1,7 +1,6 @@
 #calculation of statistics of 1d random walk
 
 import numpy as np
-import csv
 
 def rw1dCountDistinctWalks(fileNum):    
     import_file_x = "./data/distinctWalks_1d_N{0}_x.txt".format(fileNum)   # 読み込むtxtファイルの名前（1次元だけ読めば十分）
