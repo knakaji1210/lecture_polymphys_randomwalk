@@ -13,7 +13,7 @@ def rw3dCalcR(fileNum):
     x_list = []
     y_list = []
     z_list = []
-    import_file_x = "./data/distinctWalks_3d_N{0}_x.txt".format(fileNum)   # 読み込むcsvファイルの名前
+    import_file_x = "./data/distinctWalks_3d_N{0}_x.txt".format(fileNum)   # 読み込むtxtファイルの名前
     import_file_y = "./data/distinctWalks_3d_N{0}_y.txt".format(fileNum)
     import_file_z = "./data/distinctWalks_3d_N{0}_z.txt".format(fileNum)
     for i in range(numWalks):                                  # 数えたwalkの数だけ繰り返す
