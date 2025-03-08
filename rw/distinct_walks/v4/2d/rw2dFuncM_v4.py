@@ -12,7 +12,7 @@ def rw2dCalcR(fileNum):
     numWalks = rw2dCountDistinctWalks(fileNum)
     x_list = []
     y_list = []
-    import_file_x = "./data/distinctWalks_2d_N{0}_x.txt".format(fileNum)   # 読み込むcsvファイルの名前
+    import_file_x = "./data/distinctWalks_2d_N{0}_x.txt".format(fileNum)   # 読み込むtxtファイルの名前
     import_file_y = "./data/distinctWalks_2d_N{0}_y.txt".format(fileNum)
     for i in range(numWalks):                                  # 数えたwalkの数だけ繰り返す
         import_array_x = np.loadtxt(import_file_x, dtype=int, skiprows=i, max_rows=1)
