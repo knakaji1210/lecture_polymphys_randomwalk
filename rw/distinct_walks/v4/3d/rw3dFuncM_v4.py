@@ -17,6 +17,8 @@ def rw3dCalcR(fileNum):
     import_file_y = "./data/distinctWalks_3d_N{0}_y.txt".format(fileNum)
     import_file_z = "./data/distinctWalks_3d_N{0}_z.txt".format(fileNum)
     for i in range(numWalks):                                  # 数えたwalkの数だけ繰り返す
+        if (i!=0 and i%1000 ==0):                               # 進行を確認するために追加
+            print("repeated cycle =", i) 
         import_array_x = np.loadtxt(import_file_x, dtype=int, skiprows=i, max_rows=1)
         import_array_y = np.loadtxt(import_file_y, dtype=int, skiprows=i, max_rows=1)
         import_array_z = np.loadtxt(import_file_z, dtype=int, skiprows=i, max_rows=1)
