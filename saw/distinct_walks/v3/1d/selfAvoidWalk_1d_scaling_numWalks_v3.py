@@ -44,7 +44,7 @@ fig_title = "Number of Distinct Walks for 1-d Self-Avoiding Walk"
 result_text1 = "$n_{{tot}}$ = {0:.1f} x ({1:.2f}±{2:.2f})$^N$".format(10**intercept, 10**exponent, exponent_error)
 result_text2 = "$N_{{max}}$ = {0}, $T_{{comp}}$ = {1:.2f} s".format(N, elapsed_time)
 
-ax = fig.add_subplot(111,title=fig_title, xlabel='$N$', ylabel='Log($n_{{tot}}$)', xlim=(0, 1.05*N))
+ax = fig.add_subplot(111,title=fig_title, xlabel='$N$', ylabel='Log($n_{{tot}}$)', xlim=(0, 1.05*N), ylim=(0, 0.6))
 ax.grid(axis='both', color="gray", lw=0.5)
 ax.scatter(num_list, log_list)
 ax.plot(num_list, fit_func, color="black")
