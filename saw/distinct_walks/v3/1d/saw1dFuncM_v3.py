@@ -15,6 +15,8 @@ def saw1dCalcR(fileNum):
     import_file_x = "./data/distinctWalks_1d_N{0}_x.txt".format(fileNum)   # 読み込むtxtファイルの名前
     import_file_y = "./data/distinctWalks_1d_N{0}_y.txt".format(fileNum)
     for i in range(numWalks):                                  # 数えたwalkの数だけ繰り返す
+        if (i!=0 and i%1000 ==0):                               # 進行を確認するために追加
+            print("repeated cycle =", i)  
         import_array_x = np.loadtxt(import_file_x, dtype=int, skiprows=i, max_rows=1)
         import_array_y = np.loadtxt(import_file_y, dtype=int, skiprows=i, max_rows=1)
         x_end = import_array_x[-1]
