@@ -31,6 +31,8 @@ def rw1dDistinctWalks(N):                                      # Degree of polym
     export_array_y = []
 
     for i in range(numWalks):                                  # 数えたwalkの数だけ繰り返す
+        if (i!=0 and i%1000 ==0):                               # 進行を確認するために追加
+            print("repeated cycle =", i)
         import_array_x = np.loadtxt(import_file_x, dtype=int, skiprows=i, max_rows=1)
         x_end = import_array_x[-1]
         import_array_y = np.loadtxt(import_file_y, dtype=int, skiprows=i, max_rows=1)
