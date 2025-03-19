@@ -15,12 +15,12 @@ def rw3dDistinctWalks(N,sp):                                      # Degree of po
     direction = np.array([[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]])
     numDirections = direction.shape[0]                                 # 可能な移動ステップの数
 
-    import_file_x = "./data/distinctWalks_3d_N{0}_x_{1}.txt".format(fileNum,sp)    # 読み込むcsvファイルの名前  
-    import_file_y = "./data/distinctWalks_3d_N{0}_y_{1}.txt".format(fileNum,sp)
-    import_file_z = "./data/distinctWalks_3d_N{0}_z_{1}.txt".format(fileNum,sp)
-    export_file_x = "./data/distinctWalks_3d_N{0}_x_{1}.txt".format(fileNum+1,sp)  # 次のステップのcsvファイルの名前
-    export_file_y = "./data/distinctWalks_3d_N{0}_y_{1}.txt".format(fileNum+1,sp)
-    export_file_z = "./data/distinctWalks_3d_N{0}_z_{1}.txt".format(fileNum+1,sp)
+    import_file_x = "./data/distinctWalks_3d_N{0}_x_sp{1}.txt".format(fileNum,sp)    # 読み込むcsvファイルの名前  
+    import_file_y = "./data/distinctWalks_3d_N{0}_y_sp{1}.txt".format(fileNum,sp)
+    import_file_z = "./data/distinctWalks_3d_N{0}_z_sp{1}.txt".format(fileNum,sp)
+    export_file_x = "./data/distinctWalks_3d_N{0}_x_sp{1}.txt".format(fileNum+1,sp)  # 次のステップのcsvファイルの名前
+    export_file_y = "./data/distinctWalks_3d_N{0}_y_sp{1}.txt".format(fileNum+1,sp)
+    export_file_z = "./data/distinctWalks_3d_N{0}_z_sp{1}.txt".format(fileNum+1,sp)
 
     import_array = np.loadtxt(import_file_x, dtype=int)
     
