@@ -6,9 +6,7 @@
 とりあえず終了  
 ただSAW系で臨界指数が理論と合わない。これはNが大きいときにちゃんと満遍なく抜き出せてないからだと思われる。  
 Rosenbluth and Rosenbluth強化法をいずれ試してみたい。  
-https://github.com/ssh0/12-12_self_avoiding_rw/blob/master/12-12.rst
-もう一つはdistinct_walksでNを増やせない問題。メモリに任せるからだと思うが、解決の糸口は？  
-一つの解決策として結果をcsvファイルに書き出していく手法を検討中  
+https://github.com/ssh0/12-12_self_avoiding_rw/blob/master/12-12.rst  
 
 ＜distinctwalkについて＞  
 git上では  
@@ -22,6 +20,17 @@ RW 3d・・・N=11でkilled、N=10は通る
 SAW 1d・・・N=200などでも通る  
 SAW 2d・・・N=18でkilled、N=17は通る  
 SAW 3d・・・N=12でkilled、N=11は通る  
+
+Nを増やせない問題。メモリに任せるからだと思うが、解決の糸口は？  
+一つの解決策として結果をcsvファイルに書き出していく手法を採用 --> v3  
+file I/Oの繰り返しが多いためかとても遅い  
+np.arrayとtxt書き出しのバージョンをテスト中 --> v4  
+さらに大容量になったファイルを分割して計算するように修正  
+file_split.py・・・ファイルを分割  
+その後、それぞれのファイルで  
+randomWalk_3d_generate_next_distinctWalks_split.py  
+をして、最後に  
+file_join.py・・・ファイルを結合  
 
 ＜np.ndarrayに置き換える試み＞  
 pythonのリストで書いたオリジナルをnp.ndarrayに置き換える試みを行った。  
