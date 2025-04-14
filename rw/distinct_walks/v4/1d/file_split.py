@@ -23,7 +23,7 @@ file_encode = "shift_jis"
 # file_encode = "utf-8"
 
 # １ファイルあたりの行数
-line_max = 300000
+line_max = 1000000
 
 # 初期化
 line_index = 1
