@@ -17,8 +17,8 @@ n = args[1]
 c = args[2]
 
 # 分割したいファイルとそのファイルのエンコードを設定
-input_file_name = "./data/distinctWalks_3d_N{0}_{1}.txt".format(n,c)
-output_file_name = "./data/distinctWalks_3d_N{0}_{1}_sp%d.txt".format(n,c)
+input_file_name = "./data/distinctWalks_1d_N{0}_{1}.txt".format(n,c)
+output_file_name = "./data/distinctWalks_1d_N{0}_{1}_sp%d.txt".format(n,c)
 file_encode = "shift_jis"
 # file_encode = "utf-8"
 

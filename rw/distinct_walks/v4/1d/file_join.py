@@ -17,8 +17,8 @@ args = sys.argv
 n = args[1]
 c = args[2]
 
-input_file_name = "./data/distinctWalks_3d_N{0}_{1}_sp*.txt".format(n,c)
-output_file_name = "./data/distinctWalks_3d_N{0}_{1}.txt".format(n,c)
+input_file_name = "./data/distinctWalks_1d_N{0}_{1}_sp*.txt".format(n,c)
+output_file_name = "./data/distinctWalks_1d_N{0}_{1}.txt".format(n,c)
 
 # 結合対象ファイルリスト取得: 'input_file_name'で指定した全ての.txtファイルを取得
 file_list = glob.glob(input_file_name)
