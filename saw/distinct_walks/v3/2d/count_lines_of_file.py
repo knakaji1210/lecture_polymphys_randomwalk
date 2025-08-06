@@ -28,6 +28,6 @@ numWalks = sum([1 for _ in input_file])
 numSteps = math.log(numWalks, 4)
 
 
-print("numWalks = {0} = 4^{1:.0f}".format(numWalks, numSteps))
+print("numWalks = {0} = 4^{1:.1f}".format(numWalks, numSteps))
 
 input_file.close()
